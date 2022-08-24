@@ -11,4 +11,5 @@ struct User: Identifiable{
     var id: Int
     var name: String
     var credit: Int
+    var achievement: String
 }
