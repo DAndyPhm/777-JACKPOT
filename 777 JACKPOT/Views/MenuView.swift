@@ -9,16 +9,33 @@ import SwiftUI
 
 struct MenuView: View {
     var body: some View {
-        ZStack{
-            Rectangle()
-                .foregroundColor(.blue)
-                .opacity(0.6)
-                .ignoresSafeArea()
-            
-            HStack{
-                Text("START")
-                    .bold()
+        NavigationView{
+            ZStack{
+                Rectangle()
+                    .foregroundColor(.blue)
+                    .opacity(0.6)
+                    .ignoresSafeArea()
                 
+                VStack(spacing: 50){
+                    NavigationLink(destination: UserListView){
+                        Text("START")
+                            .bold()
+                            .foregroundColor(.yellow)
+                            .padding(.all, 20)
+                            .background(.red)
+                            .cornerRadius(20)
+                    }
+                    
+                    NavigationLink(destination: RuleView){
+                        Text("RULES")
+                            .bold()
+                            .foregroundColor(.yellow)
+                            .padding(.all, 20)
+                            .background(.red)
+                            .cornerRadius(20)
+                    }
+                                        
+                }
             }
         }
     }

@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 
 
-struct GameView: View {
+struct GameView(): View {
     
     private var symbols = ["7_Icon","bell_Icon","lemon_Icon"]
     private var bet_amount = 10

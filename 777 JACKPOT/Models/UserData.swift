@@ -9,5 +9,7 @@ import SwiftUI
 import Foundation
 
 var users : [User] = [
+    User(id: 1, name: "andy", credit: 1000, achievement: "none"),
+    User(id: 2, name: "rory", credit: 1200, achievement: "none"),
     
 ]
