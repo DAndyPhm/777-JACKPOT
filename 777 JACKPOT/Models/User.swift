@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct User: Identifiable{
-    var id: Int
-    var name: String
-    var credit: Int
-    var achievement: String
+    public var id: Int
+    public var name: String
+    public var credit: Int
+    public var achievement: String
+    public var highscore: Int
 }

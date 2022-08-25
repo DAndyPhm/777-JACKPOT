@@ -17,16 +17,17 @@ struct MenuView: View {
                     .ignoresSafeArea()
                 
                 VStack(spacing: 50){
-                    NavigationLink(destination: UserListView){
+                    NavigationLink(destination: UserListView()){
                         Text("START")
                             .bold()
                             .foregroundColor(.yellow)
                             .padding(.all, 20)
                             .background(.red)
                             .cornerRadius(20)
+                    
                     }
                     
-                    NavigationLink(destination: RuleView){
+                    NavigationLink(destination: RuleView()){
                         Text("RULES")
                             .bold()
                             .foregroundColor(.yellow)
@@ -34,7 +35,15 @@ struct MenuView: View {
                             .background(.red)
                             .cornerRadius(20)
                     }
-                                        
+                                      
+                    NavigationLink(destination: LeaderboardView()){
+                        Text("LEADERBOARD")
+                            .bold()
+                            .foregroundColor(.yellow)
+                            .padding(.all, 20)
+                            .background(.red)
+                            .cornerRadius(20)
+                    }
                 }
             }
         }

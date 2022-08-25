@@ -8,23 +8,28 @@
 import SwiftUI
 
 struct UserListView: View {
+    
     var body: some View {
-        NavigationView {
+
+            NavigationView {
                     List(users){
                         user in
                         NavigationLink{
                             GameView(user: user)
                         } label: {
-                            user.name
+                            UserRow(user: user)
                         }
-
                     }
-        }
+                    .navigationTitle("List of User")
+                    .navigationBarItems(trailing: Button ("Add", action:
+                                                            {
+                        add()
+                    }))
+            }
+        
     }
 }
 
-struct UserListView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserListView()
-    }
+func add(){
+    
 }

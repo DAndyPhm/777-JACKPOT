@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E153D9F28B624E300688CA5 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E153D9E28B624E300688CA5 /* Modifiers.swift */; };
 		3E2DBED828AF6003009D895D /* _77_JACKPOTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2DBED728AF6003009D895D /* _77_JACKPOTApp.swift */; };
 		3E2DBEDA28AF6003009D895D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2DBED928AF6003009D895D /* ContentView.swift */; };
 		3E2DBEDC28AF6004009D895D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E2DBEDB28AF6004009D895D /* Assets.xcassets */; };
@@ -19,10 +18,11 @@
 		3E2DBEF528AF6D86009D895D /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2DBEF428AF6D86009D895D /* UserListView.swift */; };
 		3E2DBEF728AF6D90009D895D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2DBEF628AF6D90009D895D /* MenuView.swift */; };
 		3EA62FFB28B73E1E005D7042 /* RuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA62FFA28B73E1E005D7042 /* RuleView.swift */; };
+		3EA62FFD28B74745005D7042 /* UserRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA62FFC28B74745005D7042 /* UserRow.swift */; };
+		3EB976F528B7660100ED87A1 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB976F428B7660100ED87A1 /* LeaderboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3E153D9E28B624E300688CA5 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Modifiers.swift; path = ../../../Modifiers.swift; sourceTree = "<group>"; };
 		3E2DBED428AF6003009D895D /* 777 JACKPOT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "777 JACKPOT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E2DBED728AF6003009D895D /* _77_JACKPOTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _77_JACKPOTApp.swift; sourceTree = "<group>"; };
 		3E2DBED928AF6003009D895D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +35,8 @@
 		3E2DBEF428AF6D86009D895D /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		3E2DBEF628AF6D90009D895D /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		3EA62FFA28B73E1E005D7042 /* RuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleView.swift; sourceTree = "<group>"; };
+		3EA62FFC28B74745005D7042 /* UserRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRow.swift; sourceTree = "<group>"; };
+		3EB976F428B7660100ED87A1 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				3E2DBED728AF6003009D895D /* _77_JACKPOTApp.swift */,
-				3E2DBEE828AF604E009D895D /* Sounds */,
-				3E2DBEE728AF603F009D895D /* Helpers */,
 				3E2DBEE628AF6039009D895D /* Models */,
 				3E2DBEE528AF6033009D895D /* Views */,
 				3E2DBEDB28AF6004009D895D /* Assets.xcassets */,
@@ -90,11 +90,13 @@
 			isa = PBXGroup;
 			children = (
 				3E2DBEF628AF6D90009D895D /* MenuView.swift */,
+				3E2DBEF428AF6D86009D895D /* UserListView.swift */,
 				3E2DBEE928AF6067009D895D /* GameView.swift */,
 				3E2DBEF228AF6D5B009D895D /* AchievementView.swift */,
-				3E2DBEF428AF6D86009D895D /* UserListView.swift */,
 				3E2DBED928AF6003009D895D /* ContentView.swift */,
 				3EA62FFA28B73E1E005D7042 /* RuleView.swift */,
+				3EA62FFC28B74745005D7042 /* UserRow.swift */,
+				3EB976F428B7660100ED87A1 /* LeaderboardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -106,21 +108,6 @@
 				3E2DBEED28AF60F7009D895D /* UserData.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		3E2DBEE728AF603F009D895D /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				3E153D9E28B624E300688CA5 /* Modifiers.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		3E2DBEE828AF604E009D895D /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +187,9 @@
 				3EA62FFB28B73E1E005D7042 /* RuleView.swift in Sources */,
 				3E2DBEEA28AF6067009D895D /* GameView.swift in Sources */,
 				3E2DBEF328AF6D5B009D895D /* AchievementView.swift in Sources */,
+				3EB976F528B7660100ED87A1 /* LeaderboardView.swift in Sources */,
 				3E2DBEEE28AF60F7009D895D /* UserData.swift in Sources */,
-				3E153D9F28B624E300688CA5 /* Modifiers.swift in Sources */,
+				3EA62FFD28B74745005D7042 /* UserRow.swift in Sources */,
 				3E2DBED828AF6003009D895D /* _77_JACKPOTApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
