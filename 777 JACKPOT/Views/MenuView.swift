@@ -13,7 +13,7 @@ struct MenuView: View {
             ZStack{
                 Rectangle()
                     .foregroundColor(.blue)
-                    .opacity(0.6)
+                    .opacity(0.55)
                     .ignoresSafeArea()
                 
                 VStack(spacing: 50){
@@ -45,6 +45,7 @@ struct MenuView: View {
                             .cornerRadius(20)
                     }
                 }
+                .navigationTitle("Main menu")
             }
         }
     }
