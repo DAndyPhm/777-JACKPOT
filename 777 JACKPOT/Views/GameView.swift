@@ -118,7 +118,7 @@ struct GameView: View {
                     self.betAmount.toggle()     //toggle the bet ammount each time it is pressed
                 }){
                     if self.betAmount == true{       //condition to display the ammount that the user is beting
-                        Text("BET AMMOUNT: 100")
+                        Text("BET AMOUNT: 100")
                             .bold()
                             .foregroundColor(.yellow)
                             .padding(.all, 20)
@@ -126,7 +126,7 @@ struct GameView: View {
                             .cornerRadius(20)
                     }
                     else if self.betAmount == false{
-                        Text("BET AMMOUNT: 200")
+                        Text("BET AMOUNT: 200")
                             .bold()
                             .foregroundColor(.yellow)
                             .padding(.all, 20)
