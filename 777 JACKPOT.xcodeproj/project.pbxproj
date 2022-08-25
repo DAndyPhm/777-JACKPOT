@@ -18,6 +18,7 @@
 		3E2DBEF328AF6D5B009D895D /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2DBEF228AF6D5B009D895D /* AchievementView.swift */; };
 		3E2DBEF528AF6D86009D895D /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2DBEF428AF6D86009D895D /* UserListView.swift */; };
 		3E2DBEF728AF6D90009D895D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2DBEF628AF6D90009D895D /* MenuView.swift */; };
+		3EA62FFB28B73E1E005D7042 /* RuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA62FFA28B73E1E005D7042 /* RuleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		3E2DBEF228AF6D5B009D895D /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
 		3E2DBEF428AF6D86009D895D /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		3E2DBEF628AF6D90009D895D /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		3EA62FFA28B73E1E005D7042 /* RuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				3E2DBEF228AF6D5B009D895D /* AchievementView.swift */,
 				3E2DBEF428AF6D86009D895D /* UserListView.swift */,
 				3E2DBED928AF6003009D895D /* ContentView.swift */,
+				3EA62FFA28B73E1E005D7042 /* RuleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				3E2DBEF028AF67BA009D895D /* User.swift in Sources */,
 				3E2DBEF528AF6D86009D895D /* UserListView.swift in Sources */,
 				3E2DBEF728AF6D90009D895D /* MenuView.swift in Sources */,
+				3EA62FFB28B73E1E005D7042 /* RuleView.swift in Sources */,
 				3E2DBEEA28AF6067009D895D /* GameView.swift in Sources */,
 				3E2DBEF328AF6D5B009D895D /* AchievementView.swift in Sources */,
 				3E2DBEEE28AF60F7009D895D /* UserData.swift in Sources */,
