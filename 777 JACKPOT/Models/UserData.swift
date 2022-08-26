@@ -9,7 +9,8 @@ import SwiftUI
 import Foundation
 
 var users : [User] = [
-    User(id: 1, name: "andy", credit: 1000, achievement: "none", highscore: 0),
-    User(id: 2, name: "rory", credit: 1200, achievement: "none", highscore: 0),
-    User(id: 3, name: "waka", credit: 1500, achievement: "none", highscore: 0)
+    User(name: "Andy", credit: 1000, achievement: "none", highscore: 0),
+    User(name: "Rory", credit: 1000, achievement: "none", highscore: 0),
+    User(name: "Waka", credit: 1000, achievement: "none", highscore: 0)
 ]
+

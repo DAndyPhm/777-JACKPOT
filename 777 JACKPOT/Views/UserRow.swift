@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct UserRow: View {
-    @State var user: User
+    @Binding var user: User
     var body: some View{
         ZStack{
             HStack{

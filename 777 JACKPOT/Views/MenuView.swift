@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MenuView: View {
+    @State var UserArray = users
     var body: some View {
         NavigationView{
             ZStack{
@@ -17,7 +18,7 @@ struct MenuView: View {
                     .ignoresSafeArea()
                 
                 VStack(spacing: 50){
-                    NavigationLink(destination: UserListView()){
+                    NavigationLink(destination: UserListView(users: $UserArray)){
                         Text("START")
                             .bold()
                             .foregroundColor(.yellow)

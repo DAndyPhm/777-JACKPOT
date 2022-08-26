@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct UserListView: View {
-    
+    @Binding var users: [User]
     var body: some View {
-
+        
             NavigationView {
-                    List(users){
-                        user in
-                        NavigationLink{
-                            GameView(user: user)
-                        } label: {
-                            UserRow(user: user)
+                    List{
+                        ForEach(0...users.count-1, id: \.self) {user in
+                            NavigationLink{
+                                GameView(user: $users[user])
+                            } label: {
+                                UserRow(user: $users[user])
+                            }
                         }
                     }
                     .navigationTitle("List of User")

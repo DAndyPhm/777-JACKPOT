@@ -7,10 +7,17 @@
 
 import SwiftUI
 
-struct User: Identifiable{
-    public var id: Int
-    public var name: String
-    public var credit: Int
-    public var achievement: String
-    public var highscore: Int
+class User : Identifiable{
+
+    var name: String
+    var credit: Int
+    var achievement: String
+    var highscore: Int
+    
+    init(name: String, credit: Int, achievement: String, highscore: Int){
+        self.name = name
+        self.credit = credit
+        self.achievement = achievement
+        self.highscore = highscore
+    }
 }

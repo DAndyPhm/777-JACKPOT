@@ -13,10 +13,8 @@ struct GameView: View {
     
     var symbols = ["7_Icon","bell_Icon","lemon_Icon"] //the 3 icons name
     
-    
-    @State var credit = 1000
     @State var listNumber = [1, 2, 0]
-    @State var user : User
+    @Binding var user : User
     @State var showLoseView = false
     @State var isDisable = false
     @State var betAmount = true
