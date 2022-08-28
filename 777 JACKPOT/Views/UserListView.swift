@@ -16,7 +16,7 @@ struct UserListView: View {
                 TextField("Please enter you username: ", text: $textFieldText) //Text field for the player to create a new user
                     .padding()
                     .background(Color.gray.opacity(0.2).cornerRadius(10))
-                    .foregroundColor(.black)
+                    .foregroundColor(.red)
                 
                 Button(action: {
                     playSound(sound: "ButtonClick", type: "mp3") //play sound when add a new userr
