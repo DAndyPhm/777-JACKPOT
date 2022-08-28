@@ -9,6 +9,12 @@ import SwiftUI
 
 struct LeaderboardView: View {
     var body: some View {
+        ZStack{
+            Rectangle()
+                .foregroundColor(.blue)
+                .opacity(0.55)
+                .ignoresSafeArea()
+        }
         Text("This is the leaderboard view")
     }
 }

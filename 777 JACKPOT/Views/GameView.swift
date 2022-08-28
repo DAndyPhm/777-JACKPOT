@@ -18,6 +18,30 @@ struct GameView: View {
     @State var showLoseView = false
     @State var isDisable = false
     @State var betAmount = true
+
+    
+    func achievementReward1(){
+        if  user.highscore > 2000{
+                playSound(sound: "AchievementRewarded", type: "mp3")
+                user.isAchievement1 = true
+        }
+    }
+    
+    func achievementReward2(){
+        if  user.highscore > 3000{
+                playSound(sound: "AchievementRewarded", type: "mp3")
+                user.isAchievement2 = true
+                user.isAchievement1 = false
+        }
+    }
+    
+    func achievementReward3(){
+        if  user.highscore > 4000{
+                playSound(sound: "AchievementRewarded", type: "mp3")
+                user.isAchievement3 = true
+                user.isAchievement2 = false
+        }
+    }
     
     func isWin(){ //function will run if the user win
         if listNumber[0] == listNumber[1] && listNumber[1] == listNumber[2]{ //the 3 picture is the same
@@ -30,6 +54,9 @@ struct GameView: View {
             }
             if user.credit > user.highscore{ //If the user reach a new highscore, save it to the user infomation
                 user.highscore = user.credit
+                achievementReward1()
+                achievementReward2()
+                achievementReward3()
             }
         }
     }
@@ -51,6 +78,33 @@ struct GameView: View {
                 
             
             VStack(alignment: .center, spacing: 10){
+                if user.isAchievement1 == true{
+                    HStack{
+                        Text("GAMBLING VETERAN")
+                            .bold()
+                            .foregroundColor(.red)
+                    }
+                }
+                else if user.isAchievement2 == true{
+                    HStack{
+                        Text("GAMBLING PRO")
+                            .bold()
+                            .foregroundColor(.red)
+                    }
+                }
+                else if user.isAchievement3 == true{
+                    HStack{
+                        Text("GAMBLING GOD")
+                            .bold()
+                            .foregroundColor(.red)
+                    }
+                }
+                HStack{
+                    Text("Welcome \(user.name)")
+                        .bold()
+                        .foregroundColor(.yellow)
+                }
+                
                 HStack{ // TITLES
                     Image(systemName: "star.fill")
                         .foregroundColor(.yellow)
@@ -105,7 +159,7 @@ struct GameView: View {
                         user.credit -= 200
                     }
                     self.isWin()    //check if they win
-                    self.isNoMoney()    //check if the lost
+                    self.isNoMoney() //check if they have no more credit left
                     
                 }){
                     Text("Spin")
@@ -129,7 +183,7 @@ struct GameView: View {
                     else if self.betAmount == false{
                         Text("BET AMOUNT: 200")
                             .bold()
-                            .foregroundColor(.yellow)
+                            .foregroundColor(.blue)
                             .padding(.all, 20)
                             .background(.red)
                             .cornerRadius(20)
@@ -145,7 +199,7 @@ struct GameView: View {
                                     Text("GAME OVER")
                                         .font(.system(.title, design: .rounded))
                                         .fontWeight(.heavy)
-                                        .foregroundColor(Color.white)
+                                        .foregroundColor(Color.red)
                                         .padding()
                                         .frame(minWidth: 280, idealWidth: 280, maxWidth: 320)
                                     
@@ -159,11 +213,14 @@ struct GameView: View {
                                             self.isDisable = false
                                         } label: {
                                             Text("Start over ?".uppercased())
-                                                .foregroundColor(.red)
+                                                .font(.system(.title, design: .rounded))
+                                                .fontWeight(.heavy)
+                                                .foregroundColor(Color.red)
+                                                .padding()
+                                                .frame(minWidth: 280, idealWidth: 280, maxWidth: 320)
                                         }
                                         .padding(.vertical,10)
                                         .padding(.horizontal, 20)
-                                        
                                     }
                                 }
                             }

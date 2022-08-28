@@ -44,7 +44,7 @@ struct UserListView: View {
         }
     }
     func saveUser(){
-        users.append(User(name: textFieldText, credit: 1000, achievement: " ", highscore: 1000)) //func to create new user from the textfield input
+        users.append(User(name: textFieldText, credit: 1000, highscore: 1000)) //func to create new user from the textfield input
     }
 
 }

@@ -11,13 +11,17 @@ class User : Identifiable{
 
     var name: String
     var credit: Int
-    var achievement: String
+    var isAchievement1: Bool
+    var isAchievement2: Bool
+    var isAchievement3: Bool
     var highscore: Int
     
-    init(name: String, credit: Int, achievement: String, highscore: Int){
+    init(name: String, credit: Int, highscore: Int){
         self.name = name
         self.credit = credit
-        self.achievement = achievement
+        self.isAchievement1 = false
+        self.isAchievement2 = false
+        self.isAchievement3 = false
         self.highscore = highscore
     }
 }
