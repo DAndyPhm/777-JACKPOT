@@ -17,7 +17,7 @@ struct MenuView: View {
                     .opacity(0.55)
                     .ignoresSafeArea()
                 
-                VStack(spacing: 50){
+                VStack(spacing: 20){
                     NavigationLink(destination: UserListView(users: $UserArray)){
                         Text("START")
                             .bold()
@@ -25,7 +25,7 @@ struct MenuView: View {
                             .padding(.all, 20)
                             .background(.red)
                             .cornerRadius(20)
-                    
+                        
                     }
                     
                     NavigationLink(destination: RuleView()){

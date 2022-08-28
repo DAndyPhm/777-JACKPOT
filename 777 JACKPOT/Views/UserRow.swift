@@ -13,9 +13,9 @@ struct UserRow: View {
     var body: some View{
         ZStack{
             HStack{
-                Text(user.name)
-                Text(String(user.credit))
-                Text(String(user.highscore))
+                Text("User: " + user.name)
+                Text("Credit:\(user.credit)")
+                Text("Highscore:\(user.highscore)")
             }
         }
     }

@@ -12,37 +12,39 @@ import Foundation
 struct GameView: View {
     
     var symbols = ["7_Icon","bell_Icon","lemon_Icon"] //the 3 icons name
-    
-    @State var listNumber = [1, 2, 0]
+    //variable inizialiation
+    @State var listNumber = [1, 2, 0] //list of number for the initial display of the slot macchine
     @Binding var user : User
     @State var showLoseView = false
     @State var isDisable = false
     @State var betAmount = true
     
-    func isWin(){
-        if listNumber[0] == listNumber[1] && listNumber[1] == listNumber[2]{
-            if betAmount == true{
+    func isWin(){ //function will run if the user win
+        if listNumber[0] == listNumber[1] && listNumber[1] == listNumber[2]{ //the 3 picture is the same
+            playSound(sound: "Win", type: "mp3") //play a winning sound to notify the user
+            if betAmount == true{//If the player bet low, only reward 500 credits
             user.credit += 500
             }
-            else if betAmount == false{
+            else if betAmount == false{ //If the player bet high, will reward 1200 credits
                 user.credit += 1200
             }
-            if user.credit > user.highscore{
+            if user.credit > user.highscore{ //If the user reach a new highscore, save it to the user infomation
                 user.highscore = user.credit
             }
         }
     }
     
-    func isNoMoney(){
+    func isNoMoney(){   //Func will run if the user money dropped to 0
         if user.credit <= 0{
-            showLoseView = true
-            isDisable = true
+            showLoseView = true //enable lose view bool to show it
+            isDisable = true   //Disable play button
+            playSound(sound: "YouLose", type: "mp3")    //play sound to notify the player that they lost
         }
     }
     
     var body: some View {
         ZStack{
-            Rectangle()
+            Rectangle() //background ccolor
                 .foregroundColor(.blue)
                 .opacity(0.55)
                 .ignoresSafeArea()
@@ -69,7 +71,7 @@ struct GameView: View {
                 }
                 
                 
-                HStack{
+                HStack{ //display the picture of the slotmchine
                     Image(symbols[listNumber[0]])
                         .resizable()
                         .aspectRatio(1, contentMode: .fit)
@@ -90,19 +92,20 @@ struct GameView: View {
                 }
                 
                 
-                Button(action: {
-                    self.listNumber[0] = Int.random(in: 0...self.symbols.count-1)
+                Button(action: {    //play button, click to decrease money and roll the slot machine
+                    playSound(sound: "Ring", type: "mp3") //each time the player roll, it will play a sound
+                    self.listNumber[0] = Int.random(in: 0...self.symbols.count-1) //random the number to generate different picture
                     self.listNumber[1] = Int.random(in: 0...self.symbols.count-1)
                     self.listNumber[2] = Int.random(in: 0...self.symbols.count-1)
                     
-                    if self.betAmount == true{
+                    if self.betAmount == true{ //decrease the user credit based on the ammount bet
                         user.credit -= 100
                     }
                     else if self.betAmount == false{
                         user.credit -= 200
                     }
-                    self.isWin()
-                    self.isNoMoney()
+                    self.isWin()    //check if they win
+                    self.isNoMoney()    //check if the lost
                     
                 }){
                     Text("Spin")
@@ -150,6 +153,7 @@ struct GameView: View {
                                     
                                     VStack {
                                         Button {
+                                            playSound(sound: "Replay", type: "mp3")
                                             self.showLoseView = false
                                             self.user.credit = 1000
                                             self.isDisable = false
@@ -159,6 +163,7 @@ struct GameView: View {
                                         }
                                         .padding(.vertical,10)
                                         .padding(.horizontal, 20)
+                                        
                                     }
                                 }
                             }
