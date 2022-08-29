@@ -13,7 +13,7 @@ struct UserListView: View {
     var body: some View {
             NavigationView {
                 VStack{
-                TextField("Please enter you username: ", text: $textFieldText) //Text field for the player to create a new user
+                TextField("Please enter your username: ", text: $textFieldText) //Text field for the player to create a new user
                     .padding()
                     .background(Color.gray.opacity(0.2).cornerRadius(10))
                     .foregroundColor(.blue)

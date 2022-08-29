@@ -10,7 +10,7 @@ import Foundation
 
 
 struct GameView: View {
-    @EnvironmentObject var leader : Leader
+    @EnvironmentObject var highest : Leader
     var symbols = ["7_Icon","bell_Icon","lemon_Icon"] //the 3 icons name
     //variable inizialiation
     @State var listNumber = [1, 2, 0] //list of number for the initial display of the slot macchine
@@ -54,11 +54,11 @@ struct GameView: View {
             }
             if user.credit > user.highscore{ //If the user reach a new highscore, save it to the user infomation
                 user.highscore = user.credit
-                leader.name = user.name
-                leader.score = user.highscore
-                achievementReward1()
-                achievementReward2()
-                achievementReward3()
+                highest.name = user.name //set the user name to user default to save to the leader board
+                highest.score = user.highscore // leader board highscore save
+                achievementReward1() //check for achievement 1
+                achievementReward2() //check for achievement 1
+                achievementReward3() //check for achievement 1
             }
         }
     }
@@ -80,7 +80,7 @@ struct GameView: View {
                 
             
             VStack(alignment: .center, spacing: 10){
-                if user.isAchievement1 == true{
+                if user.isAchievement1 == true{ //If else function to display the user's title
                     HStack{
                         Text("!GAMBLING VETERAN!")
                             .bold()
@@ -102,12 +102,12 @@ struct GameView: View {
                     }
                 }
                 HStack{
-                    Text("Welcome \(user.name)")
+                    Text("Welcome \(user.name)") //display username
                         .bold()
                         .foregroundColor(.yellow)
                 }
                 
-                HStack{ // TITLES
+                HStack{ // TITLES       //titles
                     Image(systemName: "star.fill")
                         .foregroundColor(.yellow)
                     
@@ -182,7 +182,7 @@ struct GameView: View {
                             .background(.red)
                             .cornerRadius(20)
                     }
-                    else if self.betAmount == false{
+                    else if self.betAmount == false{    //bet 200 credits once a play
                         Text("BET AMOUNT: 200")
                             .bold()
                             .foregroundColor(.blue)
@@ -198,7 +198,7 @@ struct GameView: View {
                                 Color("ColorBlackTransparent")
                                     .edgesIgnoringSafeArea(.all)
                                 VStack{
-                                    Text("GAME OVER")
+                                    Text("GAME OVER")   //display game over notification
                                         .font(.system(.title, design: .rounded))
                                         .fontWeight(.heavy)
                                         .foregroundColor(Color.red)
@@ -208,11 +208,11 @@ struct GameView: View {
                                     Spacer()
                                     
                                     VStack {
-                                        Button {
+                                        Button {    //button to replay
                                             playSound(sound: "Replay", type: "mp3")
-                                            self.showLoseView = false
-                                            self.user.credit = 1000
-                                            self.isDisable = false
+                                            self.showLoseView = false //turn off view functiom
+                                            self.user.credit = 1000 //set the credit back to 100
+                                            self.isDisable = false  //enable the play button again
                                         } label: {
                                             Text("Start over ?".uppercased())
                                                 .font(.system(.title, design: .rounded))

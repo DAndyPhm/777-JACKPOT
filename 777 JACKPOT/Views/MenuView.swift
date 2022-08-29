@@ -15,21 +15,21 @@ struct MenuView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                Rectangle()
+                Rectangle() //background color
                     .foregroundColor(.blue)
                     .opacity(0.55)
                     .ignoresSafeArea()
                 
                 VStack(spacing: 20){
-                    Image("777_Image")
+                    Image("777_Image")//display the slot machine's image
                         .resizable()
-                        .frame(width: 500, height: 350, alignment: .center)
+                        .frame(width: 500, height: 420, alignment: .center)
                         .scaledToFit()
                     Text("Welcome to 777 Jackpot slot machine")
                         .bold()
                         .foregroundColor(.yellow)
                     Spacer()
-                    NavigationLink(destination: UserListView(users: $UserArray)){
+                    NavigationLink(destination: UserListView(users: $UserArray)){   //navigation link to the user list view
                         Text("START")
                             .bold()
                             .foregroundColor(.yellow)
@@ -39,7 +39,7 @@ struct MenuView: View {
                         
                     }
                     
-                    NavigationLink(destination: RuleView()){
+                    NavigationLink(destination: RuleView()){    //link to rule view
                         Text("RULES")
                             .bold()
                             .foregroundColor(.yellow)
@@ -49,11 +49,11 @@ struct MenuView: View {
                     }
                                       
                     Button {
-                            leaderboard = resetLeaderboard(lead: leaderboard, player: leader)
+                            leaderboard = resetLeaderboard(lead: leaderboard, user: leader)
 //                                            leaderboard[leader.name] = leader.score
 //                                           UserDefaults.standard.removeObject(forKey: "Leader")
-                            UserDefaults.standard.set(leaderboard, forKey: "Leader")
-                            showHighScoreView.toggle()
+                        UserDefaults.standard.set(leaderboard, forKey: "Leader")    //user default to save thee highscore
+                            showHighScoreView.toggle()  //show highscore sheet
                                         } label: {
                                             Text("Leaderboard")
                                                 .bold()
@@ -72,18 +72,12 @@ struct MenuView: View {
                         }
                     }
 
-func resetLeaderboard(lead: [String:Int], player: Leader) -> [String:Int] {
+func resetLeaderboard(lead: [String:Int], user: Leader) -> [String:Int] { //function to sort the leader board
     var count = 0
-    var sortLead = lead
-    sortLead[player.name] = player.score
-    for (_, _) in sortLead.sorted(by: {$0.value > $1.value}) {
+    var sort = lead
+    sort[user.name] = user.score
+    for (_, _) in sort.sorted(by: {$0.value > $1.value}) {
         count += 1
     }
-    return sortLead
-}
-
-struct MenuView_Previews: PreviewProvider {
-    static var previews: some View {
-        MenuView()
-    }
+    return sort
 }

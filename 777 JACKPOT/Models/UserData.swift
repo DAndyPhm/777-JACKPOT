@@ -10,7 +10,5 @@ import Foundation
 
 var users : [User] = [
     User(name: "Andy", credit: 1000, highscore: 1000),
-    User(name: "Rory", credit: 1000, highscore: 1000),
-    User(name: "Waka", credit: 1000, highscore: 1000)
 ]
 

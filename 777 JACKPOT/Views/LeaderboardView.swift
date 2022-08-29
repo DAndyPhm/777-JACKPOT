@@ -21,13 +21,13 @@ struct LeaderboardView: View {
                         .font(.system(size: 50))
                         .fontWeight(.bold)
                         .foregroundColor(.yellow)
-                    ForEach(leaderboard.sorted(by: {$0.value > $1.value}), id: \.key) { key, value in
+                    ForEach(leaderboard.sorted(by: {$0.value > $1.value}), id: \.key) { key, value in   //display the user in the leaderboard
                         RoundedRectangle(cornerRadius: 10)
                             .frame(width: 300, height: 50.0)
                             .foregroundColor(.blue)
                             .overlay(
                                 HStack {
-                                    Section(header: Text(key).foregroundColor(.yellow)) {
+                                    Section(header: Text(key).foregroundColor(.yellow)) {   //show the user's name (key) and highscore (value)
                                         Text("\(value)")
                                             .foregroundColor(.yellow)
                                     }

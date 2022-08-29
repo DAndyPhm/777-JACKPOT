@@ -10,7 +10,7 @@ import SwiftUI
 
 struct UserRow: View {
     @Binding var user: User
-    var body: some View{
+    var body: some View{ //view showing the row of a user
         ZStack{
             HStack{
                 Text("User: " + user.name)
