@@ -10,7 +10,7 @@ import Foundation
 
 
 struct GameView: View {
-    
+    @EnvironmentObject var leader : Leader
     var symbols = ["7_Icon","bell_Icon","lemon_Icon"] //the 3 icons name
     //variable inizialiation
     @State var listNumber = [1, 2, 0] //list of number for the initial display of the slot macchine
@@ -54,6 +54,8 @@ struct GameView: View {
             }
             if user.credit > user.highscore{ //If the user reach a new highscore, save it to the user infomation
                 user.highscore = user.credit
+                leader.name = user.name
+                leader.score = user.highscore
                 achievementReward1()
                 achievementReward2()
                 achievementReward3()
@@ -80,21 +82,21 @@ struct GameView: View {
             VStack(alignment: .center, spacing: 10){
                 if user.isAchievement1 == true{
                     HStack{
-                        Text("GAMBLING VETERAN")
+                        Text("!GAMBLING VETERAN!")
                             .bold()
                             .foregroundColor(.red)
                     }
                 }
                 else if user.isAchievement2 == true{
                     HStack{
-                        Text("GAMBLING PRO")
+                        Text("!GAMBLING PRO!")
                             .bold()
                             .foregroundColor(.red)
                     }
                 }
                 else if user.isAchievement3 == true{
                     HStack{
-                        Text("GAMBLING GOD")
+                        Text("!GAMBLING GOD!")
                             .bold()
                             .foregroundColor(.red)
                     }

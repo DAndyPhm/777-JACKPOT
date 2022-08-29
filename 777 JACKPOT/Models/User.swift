@@ -25,3 +25,8 @@ class User : Identifiable{
         self.highscore = highscore
     }
 }
+
+class Leader: ObservableObject {
+    @Published var name = "Player"
+    @Published var score = 0
+}

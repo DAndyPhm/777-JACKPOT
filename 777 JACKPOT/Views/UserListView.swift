@@ -16,7 +16,7 @@ struct UserListView: View {
                 TextField("Please enter you username: ", text: $textFieldText) //Text field for the player to create a new user
                     .padding()
                     .background(Color.gray.opacity(0.2).cornerRadius(10))
-                    .foregroundColor(.red)
+                    .foregroundColor(.blue)
                 
                 Button(action: {
                     playSound(sound: "ButtonClick", type: "mp3") //play sound when add a new userr
@@ -28,7 +28,7 @@ struct UserListView: View {
                         .background(Color.blue.cornerRadius(10))
                         .foregroundColor(.white)
                 })
-                    List{ //This list will display an user tht added into the game
+                    List{ //This list will display the user tht added into the game
                         ForEach(0...users.count-1, id: \.self) {user in
                             NavigationLink{
                                 
